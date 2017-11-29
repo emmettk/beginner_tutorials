@@ -1,6 +1,6 @@
 /* 
- * ROS Short Course @ WHOI Assignment 1
- * Toy talker to experiment with ROS
+ * ROS Short Course @ WHOI: Assignment 1
+ * Toy talker to experiment with ROS; goes with listener "listener.cpp"
  * Written by Emmett Krupczak
  * 29 Nov 2017
  * Code heavily borrowed from wiki.ros.org/ROS/Tutorials and Louis Whitcomb
@@ -38,9 +38,11 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "talker");
   ros::NodeHandle node_handle;
+
 //Message buffer: 1000
+//Publish on channel "chatter"
   chatter_pub = node_handle.advertise<std_msgs::String>("chatter", 1000);
-//Create a timer with the desired callback frequency
+//Create a timer with the desired callback frequency, call TimerCallback
   ros::Timer timer = node_handle.createTimer(ros::Duration(1.0/(float)calls_per_sec), TimerCallback);
   ros::spin();
   return 0;

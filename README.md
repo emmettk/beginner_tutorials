@@ -1,5 +1,3 @@
-This is Module 1: Beginner Tutorials. 
-
 # ROS (Robot Operating System)
 
 ROS class offered at WHOI in Nov/Dec 2017: 
